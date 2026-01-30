@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADHYA FEST 2K26 | RGUKT Srikakulam</title>
+    <meta name="description"
+        content="Join the Festive Frenzy! ADHYA FEST 2K25 at RGUKT Srikakulam Campus-2. Cultural, Technical, and Pro Shows.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#home">ADHYA<span class="gold-text">.2K26</span></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#events" class="nav-link"><i class="fas fa-masks-theater"></i> Events</a></li>
+            <li><a href="#registration" class="nav-link"><i class="fas fa-edit"></i> Registration</a></li>
+            <li><a href="#schedule" class="nav-link"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+            <li><a href="#contact" class="nav-link"><i class="fas fa-map-marked-alt"></i> Contact</a></li>
+            <li><a href="#team" class="nav-link"><i class="fas fa-users"></i> Team</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg">
+            <div class="glow-orb orb-1"></div>
+            <div class="glow-orb orb-2"></div>
+            <div class="particles" id="particles-js"></div>
+            <div class="crowd-silhouette"></div>
+            <div class="noise-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <p class="campus-name fade-in-up">RGUKT Srikakulam Campus-2 Presents</p>
+            <h1 class="fest-title glitch-text" data-text="ADHYA 2K26 FEST">ADHYA 2K26 FEST</h1>
+            <p class="tagline fade-in-up delay-1">"Join the Festive Frenzy!"</p>
+            <div class="dates-display fade-in-up delay-2">
+                <span class="date-badge"><i class="far fa-calendar-check"></i> Feb 7, 8 & 9</span>
+            </div>
+
+            <div class="countdown-container fade-in-up delay-3">
+                <div class="countdown-label">🎉 Fest Begins In</div>
+                <div id="countdown" class="countdown-timer">
+                    <div class="time-box">
+                        <span id="days">00</span>
+                        <small>Days</small>
+                    </div>
+                    <div class="time-box">
+                        <span id="hours">00</span>
+                        <small>Hours</small>
+                    </div>
+                    <div class="time-box">
+                        <span id="minutes">00</span>
+                        <small>Minutes</small>
+                    </div>
+                    <div class="time-box">
+                        <span id="seconds">00</span>
+                        <small>Seconds</small>
+                    </div>
+                </div>
+                <div id="event-live-msg" class="hidden">🔥 ADHYA 2K26 FEST IS LIVE!</div>
+            </div>
+            <a href="#registration">
+                <button class="cta-btn pulse-anim fade-in-up delay-4" id="register-btn-hero">
+                    Register Now <i class="fas fa-arrow-right"></i>
+                </button>
+            </a>
+
+
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section">
+        <div class="container mobile-padding">
+            <h2 class="section-title">Fest <span class="gold-text">Events</span></h2>
+            <div class="events-grid">
+                <!-- Cultural -->
+                <div class="event-card">
+                    <div class="card-glow"></div>
+                    <div class="card-icon"><i class="fas fa-music"></i></div>
+                    <h3>Cultural</h3>
+                    <p>Dance, Music, Drama & more. Unleash your inner artist on the grand stage.</p>
+                    <a href="#" class="card-link">Explore <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <!-- Technical -->
+                <div class="event-card">
+                    <div class="card-glow"></div>
+                    <div class="card-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Technical</h3>
+                    <p>Project Expo, Academic Showcase. Challenge your intellect.</p>
+                    <a href="#" class="card-link">Explore <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <!-- Pro Shows -->
+                <div class="event-card">
+                    <div class="card-glow"></div>
+                    <div class="card-icon"><i class="fas fa-star"></i></div>
+                    <h3>Pro Shows</h3>
+                    <p>DJ Nights, Celebrity Guests, and High Octane performances.</p>
+                    <a href="#" class="card-link">Explore <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="section alt-bg">
+        <div class="container text-center">
+            <h2 class="section-title">Registration</h2>
+            <button class="cta-btn pulse-anim fade-in-up delay-4" id="open-form-btn" onclick="openForm()">
+                Register Now
+            </button>
+            <!-- Form Section -->
+            <div class="form-container" id="registrationForm">
+                <iframe src="https://forms.fillout.com/t/uFeRWUZSiXus"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="section">
+        <div class="container">
+            <h2 class="section-title">Event <span class="gold-text">Schedule</span></h2>
+            <div class="timeline">
+                <!-- Day 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 07</div>
+                    <div class="timeline-content">
+                        <h3>Day 1: The Beginning</h3>
+                        <ul class="schedule-list">
+                            <li><span>10:00 AM</span> Inauguration Ceremony </li>
+                            <li><span>11:00 AM</span> All Stall Opening </li>
+                            <li><span>1:00 PM</span>Fun Zone Live </li>
+                            <li><span>06:00 PM</span> Cultural Night - Round 1</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Day 2 -->
+                <div class="timeline-item right">
+                    <div class="timeline-date">Feb 08</div>
+                    <div class="timeline-content">
+                        <h3>Day 2: The Peak</h3>
+                        <ul class="schedule-list">
+                            <li><span>09:00 AM</span> Thug Of War</li>
+                            <li><span>01:00 PM</span> Project Expo</li>
+                            <li><span>07:00 PM</span> Cultural Night - Round 2</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Day 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 09</div>
+                    <div class="timeline-content">
+                        <h3>Day 3: Grand Finale</h3>
+                        <ul class="schedule-list">
+                            <li><span>10:00 AM</span> Valedictory Function</li>
+                            <li><span>03:00 PM</span> Flash Mob</li>
+                            <li><span>08:00 PM</span> DJ Night</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Team Section -->
+    <section id="team" class="section">
+        <div class="container">
+            <h2 class="section-title">Our <span class="gold-text">Team</span></h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-img"></div>
+                    <h3>Student Coord</h3>
+                    <p>Fest Lead</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-img"></div>
+                    <h3>Tech Lead</h3>
+                    <p>Web Team</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-img"></div>
+                    <h3>Event Mgr</h3>
+                    <p>Operations</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-img"></div>
+                    <h3>Creative</h3>
+                    <p>Design Head</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contact" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Get in <span class="gold-text">Touch</span></h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>RGUKT Srikakulam Campus-2, Chilakapalem, Andhra Pradesh , 532410</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 96767 80676</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/adhya.2k26?utm_source=qr&igsh=MTgzNHhvYmI2Yjc4OA=="
+                            class="social-btn"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <!-- Placeholder Map -->
+                    <iframe src="https://maps.google.com/maps?q=18.2682524,83.8094636&hl=en&z=17&output=embed"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <h2>ADHYA 2K26</h2>
+                <p>The Grandest Fest of Rajiv Gandhi University of Knowledge Technologies , Srikakulam CAMPUS-2</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; ADHYA 2K26 FEST. All Rights Reserved. Designed by Web Team.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body">
+                <i class="fas fa-tools modal-icon"></i>
+                <h2>Registrations Opening Soon!</h2>
+                <p>We are putting final touches on the portal.</p>
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <p class="small-text">Stay tuned for updates.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
