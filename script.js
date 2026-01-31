@@ -1,6 +1,102 @@
 // DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- Hero Intro Animation V2 (Cinematic) ---
+    const introOverlay = document.getElementById('intro-animation');
+    if (introOverlay) {
+        document.body.style.overflow = 'hidden';
+
+        // Elements
+        const shockwave = document.querySelector('.intro-shockwave');
+        const gridContainer = document.querySelector('.intro-grid-container');
+        const title = document.querySelector('.intro-title');
+        const content = document.querySelector('.intro-content');
+        const flashOverlay = document.querySelector('.intro-flash-overlay');
+        const tagline = document.querySelector('.intro-tagline');
+
+        // Helper: Split Text for subtle glitter later
+        const splitText = (selector) => {
+            const el = document.querySelector(selector);
+            if (!el) return;
+            const text = el.innerText;
+            el.innerHTML = '';
+            text.split('').forEach(char => {
+                const span = document.createElement('span');
+                span.innerText = char;
+                span.classList.add('intro-char');
+                el.appendChild(span);
+            });
+        };
+        splitText('#intro-text-1');
+        splitText('#intro-text-2');
+
+        // Particle System V2
+        const particlesContainer = document.getElementById('intro-particles');
+        if (particlesContainer) {
+            for (let i = 0; i < 40; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('intro-particle');
+
+                // Random 3D positioning
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                const delay = Math.random() * 2;
+
+                particle.style.left = `${x}%`;
+                particle.style.top = `${y}%`;
+                particle.style.width = Math.random() * 3 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.animationDelay = `${delay}s`;
+
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // --- TIMELINE SEQUENCE ---
+
+        // 1. Shockwave Pulse (0.5s)
+        setTimeout(() => {
+            if (shockwave) shockwave.classList.add('pulse');
+        }, 500);
+
+        // 2. Grid Explosion (1.0s)
+        setTimeout(() => {
+            if (gridContainer) gridContainer.classList.add('active');
+        }, 1000);
+
+        // 3. THE SLAM & FLASH (1.5s)
+        setTimeout(() => {
+            if (title) title.classList.add('slam');
+            if (flashOverlay) flashOverlay.classList.add('flash');
+
+            // Screen Shake Effect
+            if (content) content.classList.add('shake');
+
+            // Add glitches to random characters
+            const chars = document.querySelectorAll('.intro-char');
+            chars.forEach(char => {
+                if (Math.random() > 0.8) char.classList.add('glitch-active');
+            });
+        }, 1500);
+
+        // 4. Tagline & Stabilize (2.5s)
+        setTimeout(() => {
+            if (tagline) tagline.classList.add('reveal');
+            if (title) title.classList.add('stabilize');
+        }, 2500);
+
+        // 5. Exit (6.0s)
+        setTimeout(() => {
+            introOverlay.classList.add('fade-out');
+            document.body.style.overflow = 'visible';
+        }, 6000);
+
+        // 6. Cleanup
+        setTimeout(() => {
+            introOverlay.style.display = 'none';
+        }, 7500);
+    }
+
     // --- Navbar Scroll Effect ---
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
